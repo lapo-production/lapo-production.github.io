@@ -849,20 +849,19 @@ lb.addEventListener('touchend', e => {
   if (Math.abs(dx) > 48) (dx < 0 ? document.getElementById('lbNext') : document.getElementById('lbPrev')).click();
 });
 
-/* ─── FORM ─── */
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  if (!this.checkValidity()) { this.reportValidity(); return; }
+
+  if (!this.checkValidity()) {
+    this.reportValidity();
+    e.preventDefault();
+    return;
+  }
+
   const btn = document.getElementById('submitBtn');
-  btn.textContent = 'Mengirim…'; btn.disabled = true;
-  setTimeout(() => {
-    this.reset();
-    btn.innerHTML = 'Kirim Pesan <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
-    btn.disabled = false;
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
-  }, 1200);
+
+  btn.innerHTML = 'Mengirim…';
+  btn.disabled = true;
+
 });
 
 /* ─── BACK TO TOP ─── */
