@@ -349,6 +349,8 @@ body::before {
 ═══════════════════════════════════════════════ */
 .navbar{
   position:fixed;top:0;left:0;right:0;z-index:200;
+  z-index: 200;
+  width: 100;
   height:var(--nav-h);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 var(--px);
@@ -368,6 +370,7 @@ body::before {
   font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.05em;
   text-decoration:none;color:var(--white);flex-shrink:0;z-index:10;
   display:flex;align-items:center;gap:10px;
+  z-index: 202;
 }
 .logo-badge{
   width:32px;height:32px;flex-shrink:0;
@@ -442,6 +445,8 @@ body::before {
     gap:3px;padding:calc(var(--nav-h) + 16px) 20px 36px;
     transform:translateX(110%);transition:transform .36s cubic-bezier(.4,0,.2,1);
     border-left:1px solid rgba(201,169,110,.1);overflow-y:auto;
+    z-index: 150;
+    height: 100vh;
   }
   .nav-menu.open{transform:translateX(0)}
   .nav-menu li a{font-size:13px;letter-spacing:.09em;padding:13px 16px;border-radius:9px;border:1px solid transparent}
@@ -453,7 +458,7 @@ body::before {
   .hamburger.open span:nth-child(3){transform:rotate(-44deg) translate(4.5px,-4.5px)}
 }
 
-.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s;z-index:5;backdrop-filter:blur(2px)}
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s;z-index:5;backdrop-filter:blur(2px); z-index: 100;}
 .nav-overlay.show{opacity:1;pointer-events:auto}
 
 /* ===================== HERO ===================== */
